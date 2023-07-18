@@ -15,9 +15,15 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        <script src="https://kit.fontawesome.com/feed0b9777.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
+    <header>
     {% include 'include/_navbar.html.twig' %}
+    </header>
         {% block body %}{% endblock %}
+        <footer class="w-100 mt-auto">
+    {% include ('include/_footer.html.twig') %}
+</footer>
     </body>
 </html>
