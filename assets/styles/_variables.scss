@@ -1,0 +1,32 @@
+$blue: #2c3e50;
+$red:     #e74c3c;
+$orange:  #fd7e14;
+$yellow:  #f39c12;
+$green:   #18bc9c;
+$teal:    #20c997;
+$cyan:    #3498db;
+$white:    #fff;
+$gray-200: #ecf0f1;
+$gray-600: #95a5a6;
+$gray-700: #7b8a8b;
+$black:    #000;
+
+$primary: $blue;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $white;
+$dark: $gray-700;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark
+);
