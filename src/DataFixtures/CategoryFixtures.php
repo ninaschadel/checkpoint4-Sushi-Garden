@@ -16,28 +16,38 @@ class CategoryFixtures extends Fixture
         $manager->persist($category);
 
         $category = new Category();
-        $category->setName('Végétariens');
+        $category->setName('Plateaux à partager');
         $this->addReference('category_2', $category);
         $manager->persist($category);
 
         $category = new Category();
-        $category->setName('Sushi et makis');
+        $category->setName('Sushis');
         $this->addReference('category_3', $category);
         $manager->persist($category);
 
         $category = new Category();
-        $category->setName('Brochettes');
+        $category->setName('Makis');
         $this->addReference('category_4', $category);
         $manager->persist($category);
 
         $category = new Category();
-        $category->setName('Boissons');
+        $category->setName('California Rolls');
         $this->addReference('category_5', $category);
         $manager->persist($category);
 
         $category = new Category();
-        $category->setName('Desserts');
+        $category->setName('Brochettes');
         $this->addReference('category_6', $category);
+        $manager->persist($category);
+
+        $category = new Category();
+        $category->setName('Boissons');
+        $this->addReference('category_7', $category);
+        $manager->persist($category);
+
+        $category = new Category();
+        $category->setName('Desserts');
+        $this->addReference('category_8', $category);
         $manager->persist($category);
 
         $manager->flush();
