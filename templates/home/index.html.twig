@@ -5,31 +5,64 @@
 
 {% block body %}
 
-<div class="home-carousel w-100">
-	<div id="carouselExample" class="carousel slide w-100">
-	
-		<div class="carousel-inner home-carousel position-relative">
-		<h1 class="titre-accueil z-2 position-absolute mt-2 w-100 text-center">Restaurant à Lyon</h1>
-			<div class="carousel-item active">
-				<img src="{{ asset('build/images/home-carousel1.jpg') }}" class="d-block w-100" alt="...">
+	<div class="home-carousel w-100">
+		<div id="carouselExample" class="carousel slide w-100">
+			<div class="carousel-inner home-carousel position-relative">
+				<h1 class="titre-accueil z-2 position-absolute mt-2 w-100 text-center">Restaurant à Lyon</h1>
+				<div class="carousel-item active">
+					<img src="{{ asset('build/images/home-carousel1.jpg') }}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{{ asset('build/images/home-carousel2.jpg') }}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{{ asset('build/images/home-carousel3.jpg') }}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{{ asset('build/images/home-carousel4.jpg') }}" class="d-block w-100" alt="...">
+				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="{{ asset('build/images/home-carousel2.jpg') }}" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="{{ asset('build/images/home-carousel3.jpg') }}" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="{{ asset('build/images/home-carousel4.jpg') }}" class="d-block w-100" alt="...">
-			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Précedent</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Suivant</span>
+			</button>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Précedent</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Suivant</span>
-		</button>
-	</div></div>
+	</div>
+
+	<div class="informations d-flex flex-column m-auto ps-2 pe-2">
+		<div class="address mb-2">
+			<p class="">
+				<strong>Adresse :</strong>
+				{{ restaurant.address }}
+			</p>
+		</div>
+		<div class="phone mb-2">
+			<p class="">
+				<strong>Téléphone :</strong>
+				{{ restaurant.phone }}
+			</p>
+		</div>
+		<div class="hourly mb-2">
+			<p class="">
+				<strong>Horaires :</strong>
+				{{ restaurant.hourly }}
+			</p>
+		</div>
+	</div>
+
+	<div class="icone-information d-flex justify-content-around">
+<span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="Wifi">
+  <button class="btn btn-info rounded-circle" type="button" disabled><i class="fa-solid fa-wifi fa-2x p-3"></i></button>
+</span>
+<span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="Parking">
+  <button class="btn btn-info rounded-circle" type="button" disabled><i class="fa-solid fa-p fa-2x p-3"></i></button>
+</span>
+<span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="Places handicapés">
+  <button class="btn btn-info rounded-circle" type="button" disabled><i class="fa-solid fa-wheelchair-move fa-2x p-3"></i></button>
+</span>
+	</div>
 {% endblock %}
