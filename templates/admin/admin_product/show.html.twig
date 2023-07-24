@@ -1,0 +1,41 @@
+{% extends '/admin/base.html.twig' %}
+
+{% block title %}Admin - Produit {{product.name}}{% endblock %}
+
+{% block body %}
+<div class="container">
+		<div class="d-flex flex-column justify-content-center align-items-center">
+			<h1 class="text-center mt-5 mb-5">Produit
+				"{{product.name}}"</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ product.picture }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_product_index') }}">Retour à la liste des produits</a>
+
+    <a class="btn btn-secondary mb-1" href="{{ path('app_admin_product_edit', {'id': product.id}) }}">Modifier</a>
+
+    {{ include('/admin/admin_product/_delete_form.html.twig') }}
+{% endblock %}
