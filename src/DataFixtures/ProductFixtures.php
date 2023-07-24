@@ -5,13 +5,25 @@ namespace App\DataFixtures;
 use App\Entity\Product;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class ProductFixtures extends Fixture
 {
+    public function __construct(private ParameterBagInterface $parameterBag)
+    {
+    }
+
     public function load(ObjectManager $manager): void
     {
+        $uploadProductDir = $this->parameterBag->get('uploads_product_dir');
+        if (!is_dir(__DIR__ . '/../../public/' . $uploadProductDir)) {
+            mkdir(__DIR__ . '/../../public/' . $uploadProductDir, recursive: true);
+        }
         $product = new Product();
         $product->setName('Soupe miso');
+        $product->setPicture('soupe-miso.jpg');
+        copy(__DIR__ . '/data/product/soupe-miso.jpg',
+        __DIR__ . '/../../public/' . $uploadProductDir . '/soupe-miso.jpg');
         $product->setDescription('Soupe traditionnelle japonaise avec pâte de miso et dashi');
         $product->setPrice(3);
         $product->setCategory($this->getReference('category_1'));
@@ -19,6 +31,9 @@ class ProductFixtures extends Fixture
 
         $product = new Product();
         $product->setName('Salade de choux');
+        $product->setPicture('salade-chou.jpg');
+        copy(__DIR__ . '/data/product/salade-chou.jpg',
+        __DIR__ . '/../../public/' . $uploadProductDir . '/salade-chou.jpg');
         $product->setDescription('Mélange de chou finement émincé, assaisonné');
         $product->setPrice(3);
         $product->setCategory($this->getReference('category_1'));
@@ -26,6 +41,9 @@ class ProductFixtures extends Fixture
 
         $product = new Product();
         $product->setName('Salade hiyashi');
+        $product->setPicture('hiyashi.jpg');
+        copy(__DIR__ . '/data/product/hiyashi.jpg',
+        __DIR__ . '/../../public/' . $uploadProductDir . '/hiyashi.jpg');
         $product->setDescription('Nouilles froides, légumes frais, vinaigrette, saveurs délicates');
         $product->setPrice(7);
         $product->setCategory($this->getReference('category_1'));
@@ -33,6 +51,9 @@ class ProductFixtures extends Fixture
 
         $product = new Product();
         $product->setName('Carpaccio de thon');
+        $product->setPicture('carpaccio.jpg');
+        copy(__DIR__ . '/data/product/carpaccio.jpg',
+        __DIR__ . '/../../public/' . $uploadProductDir . '/carpaccio.jpg');
         $product->setDescription('Fines tranches de thon cru marinées, délicatesse exquise');
         $product->setPrice(10);
         $product->setCategory($this->getReference('category_1'));
@@ -40,6 +61,9 @@ class ProductFixtures extends Fixture
 
         $product = new Product();
         $product->setName('Edaname');
+        $product->setPicture('edaname.jpg');
+        copy(__DIR__ . '/data/product/edaname.jpg',
+        __DIR__ . '/../../public/' . $uploadProductDir . '/edaname.jpg');
         $product->setDescription('Fèves de soja vertes, croquantes, légèrement salées');
         $product->setPrice(5);
         $product->setCategory($this->getReference('category_1'));

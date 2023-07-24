@@ -6,3 +6,7 @@ vich_uploader:
             uri_prefix: '%uploads_category_dir%'
             upload_destination: '%kernel.project_dir%/public/%uploads_category_dir%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        products:
+            uri_prefix: '%uploads_product_dir%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_product_dir%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer            

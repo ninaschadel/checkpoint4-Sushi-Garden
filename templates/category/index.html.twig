@@ -9,7 +9,7 @@
             {% for category in categories %}
                 <div class="col-lg-3 col-6">
                     <div class="card h-100">
-                        <img src="uploads/images/{{ (category.picture) }}" class="card-img-top" alt="...">
+                        <img src="uploads/categories/{{ (category.picture) }}" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column">
                             <p class="card-title text-uppercase fw-bold text-center">{{ category.name }}</p>
                             <a href="{{ path('app_category_show', {'id': category.id}) }}" class="btn btn-primary">Voir les produits</a>

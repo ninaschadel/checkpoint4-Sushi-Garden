@@ -15,7 +15,7 @@ class CategoryFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $uploadCategoryDir = $this->parameterBag->get('upload_category_dir');
+        $uploadCategoryDir = $this->parameterBag->get('uploads_category_dir');
         if (!is_dir(__DIR__ . '/../../public/' . $uploadCategoryDir)) {
             mkdir(__DIR__ . '/../../public/' . $uploadCategoryDir, recursive: true);
         }
@@ -23,8 +23,10 @@ class CategoryFixtures extends Fixture
         $category = new Category();
         $category->setName('entrées');
         $category->setPicture('entree.jpg');
-        copy(__DIR__ . '/data/category/entree.jpg',
-        __DIR__ . '/../../public/' . $uploadCategoryDir . '/entree.jpg');
+        copy(
+            __DIR__ . '/data/category/entree.jpg',
+            __DIR__ . '/../../public/' . $uploadCategoryDir . '/entree.jpg'
+        );
         $this->addReference('category_1', $category);
         $manager->persist($category);
 
