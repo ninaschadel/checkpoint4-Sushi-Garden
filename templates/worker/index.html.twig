@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sushi Garden - Notre équipe{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-4 text-center">L'équipe Sushi Garden</h1>
+        <div class="row g-5 mb-3 mt-2 d-flex flex-row justify-content-center align-items-center">
+            {% for worker in workers %}
+                <div class="col-lg-5 col-6">
+                    <div class="card h-100">
+                        <img src="uploads/workers/{{ (worker.picture) }}" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-title text-uppercase fw-bold text-center">{{ worker.name }}</p>
+                            <p class="text-center">{{ worker.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

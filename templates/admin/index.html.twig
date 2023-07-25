@@ -1,12 +1,23 @@
 {% extends '/admin/base.html.twig' %}
 
-{% block title %}Sushi Garden - Admin{% endblock %}
+{% block title %}Sushi Garden - Admin
+{% endblock %}
 
 {% block body %}
-
-    <h1 class="mt-5 mb-5 text-center">Bonjour {{ app.user.userIdentifier }} ! </h1>
-    <p class="text-center">Ici vous pourrez modifier le contenu de votre site en vous déplaçant dans les différentes rubriques présentes
-        dans la barre
-    de navigation.</p>
-
+	<div class="container">
+    <h1 class="mt-5 mb-5 text-center">Administration</h1>
+		<p class="mt-5 mb-5 text-center">Vous êtes connectés en tant que {{ app.user.userIdentifier }} !
+		</p>
+		<p class="text-center mb-5">Ici vous pourrez modifier le contenu de votre site en vous déplaçant dans les différentes rubriques présentes
+					        dans la barre
+					    de navigation.</p>
+		<div class="d-flex flex-row justify-content-center align-items-center gap-5 mt-5 mb-4 pt-5">
+			<a class="link-animation w-25 btn btn-lg btn-warning text-decoration-none" href="{{ path('app_admin_category_index') }}">Administrer les catégories</a>
+			<a class="link-animation w-25 btn btn-lg btn-secondary text-decoration-none" href="{{ path('app_admin_product_index') }}">Administrer les produits</a>
+		</div>
+		<div class="d-flex flex-row justify-content-center align-items-center gap-5 mt-2">
+			<a class="link-animation w-25 btn btn-lg btn-info text-decoration-none" href="{{ path('app_admin_worker_index') }}">Administrer les membres de l'équipe</a>
+			<a class="link-animation w-25 btn btn-lg btn-success text-decoration-none" href="/" target="_blank">Me rendre sur le site</a>
+		</div>
+	</div>
 {% endblock %}
