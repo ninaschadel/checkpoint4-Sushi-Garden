@@ -1,0 +1,41 @@
+{% extends '/admin/base.html.twig' %}
+
+{% block title %}Admin - Equipe{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Liste des membres de l'équipe</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for worker in workers %}
+            <tr>
+                <td>{{ worker.id }}</td>
+                <td>{{ worker.name }}</td>
+                <td>{{ worker.description }}</td>
+                <td>{{ worker.picture }}</td>
+                <td>
+                    <a href="{{ path('app_admin_worker_show', {'id': worker.id}) }}">Voir</a>
+                    <a href="{{ path('app_admin_worker_edit', {'id': worker.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_worker_new') }}">Ajouter un membre</a>
+    </div>
+{% endblock %}

@@ -9,4 +9,8 @@ vich_uploader:
         products:
             uri_prefix: '%uploads_product_dir%'
             upload_destination: '%kernel.project_dir%/public/%uploads_product_dir%'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer            
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        workers:
+            uri_prefix: '%uploads_worker_dir%'
+            upload_destination: '%kernel.project_dir%/public/%uploads_worker_dir%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer     

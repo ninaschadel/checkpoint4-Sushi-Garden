@@ -7,6 +7,7 @@ parameters:
     uploads_dir: '/uploads'
     uploads_category_dir: '%uploads_dir%/categories'
     uploads_product_dir: '%uploads_dir%/products'
+    uploads_worker_dir: '%uploads_dir%/workers'
 
 services:
     # default configuration for services in *this* file
